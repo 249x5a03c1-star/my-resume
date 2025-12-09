@@ -5,14 +5,100 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Surendra Manukrindi - Mechanical Resume</title>
-    <link rel="stylesheet" href="./style.css"> 
+    <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
-    <p>Linkdin: <a href="https://www.linkedin.com/in/nithin-gottiparthi-0b1b1a1b2/" target="_blank">LinkedIn</a></p>
-    <p>GitHub: <a href="https://github.com/249x5a03c1-star" target="_blank">GitHub</a></p>
+    <div class="container">
+        <header>
+            <div class="profile-photo">
+                <img src="./profile.png" alt="Profile image">
+            </div>
+            <div class="profile-info">
+                <h1>Surendra Manukrindi</h1>
+                <p>I'm a **ROYAL Mechanical student**</p>
+                <p>I 💖 AUTOMOBILES</p>
+            </div>
+        </header>
 
-    <script src="./script.js"></script> 
+        <hr>
+
+        <h2>🎓 Education</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Degree</th>
+                    <th>Institution</th>
+                    <th>Year</th>
+                    <th>Grade/Percentage</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>B.Tech</td>
+                    <td>GPREC</td>
+                    <td>2023-2027</td>
+                    <td>7.5 CGPA</td>
+                </tr>
+                <tr>
+                    <td>Diploma</td>
+                    <td>Govt polytechnic College jammalamadugu</td>
+                    <td>2021-2024</td>
+                    <td>75.28%</td>
+                </tr>
+                <tr>
+                    <td>S.S.C</td>
+                    <td>A.P Model School Thimmapuram</td>
+                    <td>2020-2021</td>
+                    <td>95%</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>🛠️ Technical Expertise</h2>
+        <ul class="expertise-list">
+            <li>Machine operating</li>
+            <li>3D Modeling/Printing</li>
+            <li>AutoCAD/CAM</li>
+        </ul>
+
+        <h2>⚙️ Projects</h2>
+        <div class="project-detail">
+            <h4>My Portfolio</h4>
+            <i>Web Application</i>
+            <p><a href="#" target="_blank">Visit Project</a></p>
+            <ul>
+                <li>This is a portfolio application developed using **HTML** for showcasing skills and projects.</li>
+            </ul>
+        </div>
+
+        <h2>📧 Contact Me</h2>
+        <fieldset>
+            <legend>Contact Form</legend>
+            <form action="https://formspree.io/f/xvgaqzbk" method="POST" id="contactForm">
+                <label for="name">Name:</label>
+                <input type="text" name="name" placeholder="Enter your name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" name="email" placeholder="Enter your email" required>
+
+                <label for="message">Message:</label>
+                <textarea name="message" rows="5" cols="30" placeholder="Enter your message" required></textarea>
+
+                <input type="submit" value="Send Message">
+                <input type="reset" value="Clear Form">
+            </form>
+        </fieldset>
+
+        <div class="contact-links">
+            <p>Contact me at: <a href="mailto:manikindisurendra@gmail.com">📩 Email</a></p>
+            <p>Call me: <a href="callto:6300198580">📞 Phone</a></p>
+            <p>Linkdin: <a href="https://www.linkedin.com/in/nithin-gottiparthi-0b1b1a1b2/" target="_blank">LinkedIn</a></p>
+            <p>GitHub: <a href="https://github.com/249x5a03c1-star" target="_blank">GitHub</a></p>
+        </div>
+    </div>
+
+    <script src="./script.js"></script>
 </body>
 
 </html>

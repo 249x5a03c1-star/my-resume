@@ -1,25 +1,25 @@
 document.addEventListener('DOMContentLoaded', (event) => {
-    // 1. Creative Alert on Form Submission
-    const contactForm = document.querySelector('form');
+    // Select the form using its ID
+    const contactForm = document.getElementById('contactForm');
     
     if(contactForm) {
+        // Add event listener for form submission
         contactForm.addEventListener('submit', function(e) {
-            // Check if essential fields are filled (basic client-side validation)
+            // Basic client-side check to enhance UX
             const name = document.querySelector('input[name="name"]').value;
             const email = document.querySelector('input[name="email"]').value;
             const message = document.querySelector('textarea[name="message"]').value;
 
             if (name && email && message) {
-                // A creative alert to confirm the action
-                alert("🚀 Message sent! Surendra will get back to you soon. Thanks for connecting!");
+                // Creative confirmation alert (will execute before the form submits to formspree)
+                alert("🚀 Message sent! Surendra will get back to you soon. Thank you for reaching out.");
             } else {
-                // Simple warning for missing fields
-                alert("Please fill in all the fields before submitting.");
+                // The browser's 'required' attribute should handle this, but this is a fallback.
+                console.warn("Form submission attempted with missing required fields.");
             }
-            // Note: The form will still attempt to submit to formspree.io as defined in the HTML action.
         });
     }
 
-    // 2. Simple console log for tracking
-    console.log("Resume website loaded successfully. Surendra Manukrindi, Mechanical Student.");
+    // Console log for tracking deployment success
+    console.log("Resume website scripts loaded successfully.");
 });

@@ -1,7 +1,7 @@
 /* --- Global Styles --- */
 :root {
-    --primary-color: #0077b6; /* A professional blue */
-    --secondary-color: #03045e; /* Darker blue for accents */
+    --primary-color: #0077b6; /* Professional Blue */
+    --secondary-color: #03045e; /* Dark Navy for accents */
     --text-color: #333;
     --light-bg: #f4f7f6;
     --white: #ffffff;
@@ -21,55 +21,62 @@ body {
 .container {
     max-width: 900px;
     margin: 30px auto;
-    padding: 20px;
+    padding: 20px 40px; /* More horizontal padding */
     background: var(--white);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15); /* Stronger shadow */
     border-radius: 8px;
 }
 
 hr {
     border: none;
-    border-top: 1px solid var(--border-color);
-    margin: 20px 0;
+    border-top: 1px solid #ddd;
+    margin: 25px 0;
 }
 
-/* --- Header Section --- */
+/* --- Header Section (Flexbox Layout) --- */
 header {
     display: flex;
     align-items: center;
     padding-bottom: 20px;
 }
 
-header img {
-    border-radius: 50%; /* Make the image circular */
+.profile-photo img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
     object-fit: cover;
-    border: 4px solid var(--primary-color);
-    margin-right: 20px;
-    /* Use CSS to float and margin, not inline style */
-    float: left; 
+    border: 5px solid var(--primary-color);
+    margin-right: 30px;
+    transition: transform 0.3s ease-in-out;
 }
 
-header h1 {
+.profile-photo img:hover {
+    transform: scale(1.05);
+}
+
+.profile-info h1 {
     color: var(--secondary-color);
-    margin: 0 0 5px 0;
-    font-size: 2.5em;
-    /* Overriding the inline red color */
-    color: var(--primary-color) !important; 
+    margin: 0 0 10px 0;
+    font-size: 2.8em;
+    border-bottom: 3px solid var(--primary-color);
+    display: inline-block;
+    padding-bottom: 5px;
 }
 
-header p {
+.profile-info p {
     margin: 5px 0;
-    font-style: italic;
-    color: #666;
+    font-size: 1.1em;
+    color: #555;
 }
 
-/* --- Content Sections --- */
+/* --- Content Headings --- */
 h2 {
     color: var(--secondary-color);
-    border-bottom: 2px solid var(--primary-color);
-    padding-bottom: 5px;
-    margin-top: 25px;
-    font-size: 1.5em;
+    border-left: 5px solid var(--primary-color);
+    padding-left: 10px;
+    margin-top: 35px;
+    margin-bottom: 15px;
+    font-size: 1.6em;
 }
 
 /* --- Table Styling (Education) --- */
@@ -77,66 +84,72 @@ table {
     width: 100%;
     border-collapse: collapse;
     margin-bottom: 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--border-color);
 }
 
 th, td {
-    padding: 12px 15px;
+    padding: 15px;
     text-align: left;
-    border-bottom: 1px solid #ddd;
+    border: 1px solid #eee;
 }
 
 th {
-    background-color: var(--primary-color);
+    background-color: var(--secondary-color);
     color: var(--white);
-    font-weight: bold;
+    font-weight: 500;
     text-transform: uppercase;
     font-size: 0.9em;
 }
 
 tr:nth-child(even) {
-    background-color: var(--light-bg);
+    background-color: #f9f9f9;
 }
 
-/* --- List Styling (Technical Expertise, Projects) --- */
-ul {
-    list-style-type: square;
+/* --- Expertise/Project List Styling --- */
+.expertise-list, ul {
+    list-style: none; /* Remove default bullet */
     padding-left: 20px;
 }
 
-ul li {
-    margin-bottom: 8px;
+.expertise-list li::before {
+    content: "🚀"; /* Custom bullet point */
+    margin-right: 10px;
+    color: var(--primary-color);
 }
 
-/* --- Project Styling --- */
-.project h4 {
-    margin: 0;
-    font-size: 1.1em;
-    color: var(--secondary-color);
+.project-detail {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background-color: #fcfcfc;
 }
 
-.project i {
-    color: #666;
-    display: block;
-    margin-bottom: 5px;
+.project-detail h4 {
+    color: var(--primary-color);
+    margin: 0 0 5px 0;
+    font-size: 1.2em;
 }
 
 /* --- Contact Form Styling --- */
 fieldset {
-    border: 1px solid var(--border-color);
-    padding: 20px;
-    border-radius: 5px;
+    border: 2px solid var(--primary-color);
+    padding: 25px;
+    border-radius: 10px;
     margin-top: 20px;
+    background-color: #fff;
 }
 
 legend {
-    color: var(--primary-color);
+    color: var(--secondary-color);
+    font-size: 1.2em;
     font-weight: bold;
-    padding: 0 10px;
+    padding: 0 15px;
 }
 
 form label {
     display: block;
+    margin-top: 15px;
     margin-bottom: 5px;
     font-weight: bold;
 }
@@ -144,25 +157,32 @@ form label {
 form input[type="text"],
 form input[type="email"],
 form textarea {
-    width: calc(100% - 22px);
-    padding: 10px;
-    margin-bottom: 10px;
+    width: 100%;
+    padding: 12px;
     border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box; /* Important for padding/width calculation */
+    border-radius: 6px;
+    box-sizing: border-box; 
+    transition: border-color 0.3s;
+}
+
+form input:focus, form textarea:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 119, 182, 0.3);
 }
 
 form input[type="submit"],
 form input[type="reset"] {
+    margin-top: 20px;
     background-color: var(--primary-color);
     color: var(--white);
-    padding: 10px 15px;
+    padding: 12px 20px;
     border: none;
-    border-radius: 4px;
+    border-radius: 6px;
     cursor: pointer;
     font-weight: bold;
     transition: background-color 0.3s ease;
-    margin-right: 10px;
+    width: auto;
 }
 
 form input[type="submit"]:hover,
@@ -170,6 +190,27 @@ form input[type="reset"]:hover {
     background-color: var(--secondary-color);
 }
 
-/* --- Footer/Contact Links --- */
+/* --- Contact Links --- */
+.contact-links {
+    margin-top: 30px;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+    text-align: center;
+}
+
 .contact-links p {
-    display
+    display: inline-block;
+    margin: 5px 15px;
+}
+
+.contact-links a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.contact-links a:hover {
+    color: var(--secondary-color);
+    text-decoration: underline;
+}
